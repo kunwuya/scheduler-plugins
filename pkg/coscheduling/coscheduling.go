@@ -232,7 +232,7 @@ func (cs *Coscheduling) Permit(ctx context.Context, state *framework.CycleState,
 			waitTime = wait
 		}
 		retStatus = framework.NewStatus(framework.Wait)
-		// Cancel this handling since high priority pod group in pending status will block other pods
+		// Cancel this handling since high priority pod group in pending status will block other pods.
 		// cs.pgMgr.ActivateSiblings(ctx, pod, state)
 	case core.Success:
 		pgFullName := util.GetPodGroupFullName(pod)
